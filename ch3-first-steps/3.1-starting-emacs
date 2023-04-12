@@ -1,0 +1,8 @@
+#STARTING EMACS:
+====================
+	When run from command line, Emacs runs in its GUI form as opposed to its terminal form which can be invoked through command: emacs -nw
+--nw : force emacs to run in terminal
+-q   : do not load an init file (like init.el)
+-Q   : Do not load site-wide startup file(a global setting file like init file), your init file, nor X resource
+Emacs will usually start slower than other editors (as it has more packages and features) as it's designed for long session and not quick edits
+      

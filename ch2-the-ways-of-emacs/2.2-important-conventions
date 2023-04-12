@@ -1,0 +1,39 @@
+CHAPTER 2 SECTION 2
+#IMPORTANT CONVENTIONS
+----------------------
+*The Buffer:
+     Most text editors are file-based, they display text from files and write to files.
+     In Emacs are files are buffers but not all buffers are files. If you want to temporarily store some text you just create and name a new buffer, Emacs will not be asking you for a filename only if you want to store you text in disk
+     Emacs buffers are more than just a place to write text in , it is a I/O device to talk to another process such as a shell like bash or even Python
+     Almost all of Emacs commands act on buffers, the buffer is not an opaque internal data structure , it is the data structure itself
+
+*The Window and the Frame:
+     A window in Emacs is titled portion of a frame, a frame is what nowadays called (window) by modern window managers, so it's the other way around.
+     You can create as many frames as you like, and each frame can be splited and titled freely.
+
+*Modeline, Echo Area, and Minibuffer:
+    Emacs uses the modeline to communicate facts about Emacs and buffer you are in. The modeline looks like this:
+    -UUU:**--F3 *scratch* All L4 (Lisp Interaction) --
+    What you should care about to begin with are the (name) and (modes). In this instance, the buffer is name *scratch* and the major mode is (List Interaction). Most editors have a similar element known as the (status bar). And even more information can displayed here something like battery and source control branch ...
+    The minibuffer is directly below the modeline and it is used to display errors and general information. The minibuffer is almost like a normal buffer you can use most of edition commands and if necessary the minibuffer will expand to multiple lines. It is how you communicate with Emacs.
+
+*The Point and Mark:
+     Point is what now commonly known as the (caret) or (cursor). Emacs documentation is inconsistent using the terms point and cursor. Nevertheless, the point is your current position in a buffer. Each buffers has its own separate point indepedent of all other buffers.
+     Since several buffers can coexist simultaneously, we denote the (current buffer) is whichever buffer which has the point, in other words the buffer you're currently editing. One and only one buffer can be the (current buffer) at any time
+     Point is part of a duo called the (Point and Mark) which are boundary of a text region nowadays called (Selection) or (Highlight), but also the Mark serves as a beacon which you can return to some time later. Typically the mark is invisible
+
+*Killing, Yanking and CUA:
+    Killing is cutting, Yanking is pasting, and Copying is known as (saving to the kill ring) or just (copy). The reasons of these namings are historical, most of the keys and terminology stem from IBM's Common User Access (CUA) and Apple. But the CUA was introduced in 1987, many years after Emacs had settled on its own terminology and standards.
+
+*.emacs.d, init.el, and .eamcs:
+    In pastime Emacs users shared little snippests of code or customizations that make their lives easier. Historically these settings were kept in file called .emacs, but most keep there customization in ~/.emacs.d/init.el. Now Emacs writes several files all of which are contained in the .emacs.d directory so as not to clutter your filesystem.
+     Emacs 27 and later now supports the XDG convention of storing settings in ~/.config/emacs/init.el in Linux systems supporting this
+     To make Emacs run what's in your configuration file, the easiest way is just close and open it again
+     Emacs will not save changes for you, but this can be done through the (Customize interface), it's your responsibility to save changes you want to keep in your init.el
+
+*Major Modes and Minor Modes:
+     Major modes in Emacs control how buffers behave. Each buffer always has a major mode. A major mode may be basic offering nothing or little, or may be advanced offering things like font locking (syntax highlighting), indentations and comments
+     Emacs has two central register, one which maps file extension to major modes so Emacs automatically use the appropriate major mode for your file, and another central register which infers which major mode for files with ambiguous(or no) file extension
+     Note: Syntax Highlighting in Emacs is called (Font locking) which is made of faces of properties (font, size, color, ...) which font locking engines use to pretty-print text and this naming predates all what's known today.
+     You can freely change the buffer's major mode anytime.
+     On the other hand a buffer can have zero, one or many minor modes. Major mode is always display in the modeline but minor modes can also be displayed there

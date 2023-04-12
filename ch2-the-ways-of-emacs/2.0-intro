@@ -1,0 +1,8 @@
+-Emacs was first a set of macros written by Richard Stallman for a text editor called (TECO) back in 1967
+
+- Ever since then there has been many competing Emacs implementations for Emacs, but today you will likely encounter XEmacs or GNU Emacs
+
+-XEmacs was more advanced than GNU Emacs util GNU Emacs 22, and ever since version 22 GNU had the upper hand
+
+-Eamcs has very odd terminology for the things we have today
+

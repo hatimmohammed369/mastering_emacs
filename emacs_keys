@@ -1,0 +1,341 @@
+* MORE FEATURES
+---------------
+
+You can learn more about Emacs by reading its manual, either as a
+printed book, or inside Emacs (use the Help menu or type C-h r).
+Two features that you may like especially are completion, which saves
+typing, and Dired, which simplifies file handling.
+
+Completion is a way to avoid unnecessary typing.  For instance, if you
+want to switch to the *Messages* buffer, you can type C-x b *M<Tab>
+and Emacs will fill in the rest of the buffer name as far as it can
+determine from what you have already typed.  Completion also works for
+command names and file names.  Completion is described in the Emacs
+manual in the node called "Completion".
+
+Dired enables you to list files in a directory (and optionally its
+subdirectories), move around that list, visit, rename, delete and
+otherwise operate on the files.  Dired is described in the Emacs
+manual in the node called "Dired".
+
+The manual also describes many other Emacs features.
+
+
+CTRL-v
+Move one screenful forward
+
+ALT-v
+Move one screenful backwards
+
+CTRL-p
+Previous line
+
+CTRL-n
+next line
+
+CTRL-f
+Forward one character
+
+ALT-f
+Forward one word
+
+CTRL-b
+Backward one character
+
+ALT-b
+Backward one word
+
+CTRL-a
+Line head
+
+CTRL-e
+Line tail
+
+ALT-a
+Paragraph head
+
+ALT-e
+Paragraph tail
+
+ALT-<
+Move to head of text
+
+ALT->
+Move to end of text
+
+CTRL-x h : select all
+
+ALT-CTRL-SHIFT-[
+ALT-CTRL-SHIFT-]
+Move by blocks of (code, paragraphs, ...)
+
+On most terminals, the "<" is above the comma, so you must use the
+shift key to type it.  On these terminals you must use the shift key
+to type M-< also; without the shift key, you would be typing M-comma.
+
+Most Emacs commands accept a numeric argument; for most commands, this
+serves as a repeat-count.  The way you give a command a repeat count
+is by typing C-u and then the digits before you type the command.  If
+you have a META (or ALT) key, there is another, alternative way
+to enter a numeric argument: type the digits while holding down the
+META key.  We recommend learning the C-u method because it works on
+any terminal.  The numeric argument is also called a "prefix argument",
+because you type the argument before the command it applies to.
+
+C-v and M-v are another kind of exception.  When given an argument,
+they scroll the text up or down by that many lines, rather than by a
+screenful.  For example, C-u 8 C-v scrolls by 8 lines.
+
+There is a whole series of commands that start with CONTROL-x; many of
+them have to do with windows, files, buffers, and related things.
+These commands are two, three or four characters long.
+
+The <Return> key is special, in that pressing it may do more than
+just insert a Newline character.  Depending on the surrounding text,
+it may insert whitespace after the Newline character, so that when
+you start typing on the newly created line, the text lines up with
+that on the previous line.  We call this behavior (where pressing a
+key does more than simply inserting the relevant character) "electric".
+
+You've now learned the most basic way of typing something in
+Emacs and correcting errors.  You can delete by words or lines
+as well.  Here is a summary of the delete operations:
+
+	<DEL>        Delete the character just before the cursor
+	C-d   	     Delete the next character after the cursor
+
+	M-<DEL>      Kill the word immediately before the cursor (alt+shift+delete) (alt+backspace)
+	M-d	     Kill the next word after the cursor
+
+	C-k	     Kill from the cursor position to end of line
+	M-k	     Kill to the end of the current sentence
+
+Notice that <DEL> and C-d vs M-<DEL> and M-d extend the parallel
+started by C-f and M-f (well, <DEL> is not really a control character,
+but let's not worry about that).  C-k and M-k are like C-e and M-e,
+sort of, in that lines are paired with sentences.
+
+Select text:
+Press CTRL-SPACE and move
+
+Copy block of text:
+Select text and then ALT-w
+
+The difference between "killing" and "deleting" is that "killed" text
+can be reinserted (at any position), whereas "deleted" things cannot
+be reinserted in this way (you can, however, undo a deletion--see
+below).  Reinsertion of killed text is called "yanking".  (Think of it
+as yanking back, or pulling back, some text that was taken away.)
+Generally, the commands that can remove a lot of text kill the text
+(they are set up so that you can yank the text), while the commands
+that remove just one character, or only remove blank lines and spaces,
+do deletion (so you cannot yank that text).  <DEL> and C-d do deletion
+in the simplest case, with no argument.  When given an argument, they
+kill instead.
+
+The command for yanking (pasting) is C-y.  It reinserts the last killed text,
+at the current cursor position.
+
+If you do several C-k's in a row, all of the killed text is saved
+together, so that one C-y will yank all of the lines at once.
+
+CTRL-x k : Kill current buffer
+
+CTRL-x 1 : Kill all others windows
+
+CTRL-x CTRL-b : Buffers list
+
+CTRL-x b : A prompt is displayed asking to which buffer to switch
+CTRL-x b foo : switch to buffer foo
+
+CTRL-x s: asks for saving each buffer corresponding to file
+
+CTRL-z : temporarily suspend emacs when run in text terminal
+use command (fg) or (%emacs) to resume emacs session
+
+C-x C-f		Find file
+C-x C-s		Save buffer to file
+C-x s		Save some buffers to their files
+C-x C-b		List buffers
+C-x b		Switch buffer
+C-x C-c		Quit Emacs
+C-x 1		Delete all but one window
+C-x u		Undo
+
+ALT-x : Named eXtended commands are commands which are used even less
+frequently, or commands which are used only in certain modes.  An
+example is the command replace-string, which replaces one string with
+another in the buffer.  When you type M-x, Emacs prompts you at the
+bottom of the screen with M-x and you should type the name of the
+command; in this case, "replace-string".  Just type "repl s<TAB>" and
+Emacs will complete the name.  (<TAB> is the Tab key, usually found
+above the Caps Lock or Shift key near the left edge of the keyboard.)
+Submit the command name with <Return>.
+
+* AUTO SAVE
+-----------
+
+When you have made changes in a file, but you have not saved them yet,
+they could be lost if your computer crashes.  To protect you from
+this, Emacs periodically writes an "auto save" file for each file that
+you are editing.  The auto save file name has a # at the beginning and
+the end; for example, if your file is named "hello.c", its auto save
+file's name is "#hello.c#".  When you save the file in the normal way,
+Emacs deletes its auto save file.
+
+If the computer crashes, you can recover your auto-saved editing by
+finding the file normally (the file you were editing, not the auto
+save file) and then typing M-x recover-this-file <Return>.  When it
+asks for confirmation, type yes<Return> to go ahead and recover the
+auto-save data.
+
+One minor mode which is very useful, especially for editing
+human-language text, is Auto Fill mode.  When this mode is on, Emacs
+breaks the line in between words automatically whenever you insert
+text and make a line that is too wide.
+
+You can turn Auto Fill mode on by doing M-x auto-fill-mode <Return>.
+When the mode is on, you can turn it off again by doing
+M-x auto-fill-mode <Return>.  If the mode is off, this command turns
+it on, and if the mode is on, this command turns it off.  We say that
+the command "toggles the mode".
+
+>> Type M-x auto-fill-mode <Return> now.  Then insert a line of "asdf "
+   over again until you see it divide into two lines.  You must put in
+   spaces between them because Auto Fill breaks lines only at spaces.
+
+The margin is usually set at 70 characters, but you can change it
+with the C-x f command.  You should give the margin setting you want
+as a numeric argument.
+
+>> Type C-x f with an argument of 20.  (C-u 2 0 C-x f).
+   Then type in some text and see Emacs fill lines of 20
+   characters with it.  Then set the margin back to 70 using
+   C-x f again.
+
+If you make changes in the middle of a paragraph, Auto Fill mode
+does not re-fill it for you.
+To re-fill the paragraph, type M-q (META-q) with the cursor inside
+that paragraph.
+
+
+
+
+
+* SEARCHING
+-----------
+
+Emacs can do searches for strings (a "string" is a group of contiguous
+characters) either forward through the text or backward through it.
+Searching for a string is a cursor motion command; it moves the cursor
+to the next place where that string appears.
+
+The Emacs search command is "incremental".  This means that the
+search happens while you type in the string to search for.
+
+The command to initiate a search is C-s for forward search, and C-r
+for reverse search.  BUT WAIT!  Don't try them now.
+
+When you type C-s you'll notice that the string "I-search" appears as
+a prompt in the echo area.  This tells you that Emacs is in what is
+called an incremental search waiting for you to type the thing that
+you want to search for.  <Return> terminates a search.
+
+>> Now type C-s to start a search.  SLOWLY, one letter at a time,
+   type the word "cursor", pausing after you type each
+   character to notice what happens to the cursor.
+   Now you have searched for "cursor", once.
+>> Type C-s again, to search for the next occurrence of "cursor.
+>> Now type <DEL> four times and see how the cursor moves.
+>> Type <Return> to terminate the search.
+
+Did you see what happened?  Emacs, in an incremental search, tries to
+go to the occurrence of the string that you've typed out so far.  To
+go to the next occurrence of "cursor" just type C-s again.  If no such
+occurrence exists, Emacs beeps and tells you the search is currently
+"failing".  C-g would also terminate the search.
+
+If you are in the middle of an incremental search and type <DEL>, the
+search "retreats" to an earlier location.  If you type <DEL> just
+after you had typed C-s to advance to the next occurrence of a search
+string, the <DEL> moves the cursor back to an earlier occurrence.  If
+there are no earlier occurrences, the <DEL> erases the last character
+in the search string.  For instance, suppose you have typed "c", to
+search for the first occurrence of "c".  Now if you type "u", the
+cursor will move to the first occurrence of "cu".  Now type <DEL>.
+This erases the "u" from the search string, and the cursor moves back
+to the first occurrence of "c".
+
+If you are in the middle of a search and type a control or meta
+character (with a few exceptions--characters that are special in a
+search, such as C-s and C-r), the search is terminated.
+
+C-s starts a search that looks for any occurrence of the search string
+AFTER the current cursor position.  If you want to search for
+something earlier in the text, type C-r instead.  Everything that we
+have said about C-s also applies to C-r, except that the direction of
+the search is reversed.
+
+
+CTRL-x 2 : create a copy of the current window
+CTRL-x 1 : kill all but current window
+CTRL-x o : switch to other window
+CTRL-ALT v : scroll through other window WITHOUT switching to it
+
+
+CTRL-u 4 CTRL-f : displays a prompt asking for file name to be displayed
+then creates a new window holding that file
+
+
+CTRL-x 5 2 : creates another frame holding the same contents as the current
+CTRL-x 5 0 : Kill the selected frame
+Killing all frames kills Emacs job
+
+
+* RECURSIVE EDITING LEVELS
+--------------------------
+
+Sometimes you will get into what is called a "recursive editing
+level".  This is indicated by square brackets in the mode line,
+surrounding the parentheses around the major mode name.  For
+example, you might see [(Fundamental)] instead of (Fundamental).
+
+To get out of the recursive editing level, type <ESC> <ESC> <ESC>.
+That is an all-purpose "get out" command.  You can also use it for
+eliminating extra windows, and getting out of the minibuffer.
+
+>> Type M-x to get into a minibuffer; then type <ESC> <ESC> <ESC> to
+   get out.
+
+You cannot use C-g to get out of a recursive editing level.  This is
+because C-g is used for canceling commands and arguments WITHIN the
+recursive editing level.
+
+
+
+* GETTING MORE HELP
+___________________
+C-h c then press COMMAND keys SEQUENCE : very brief description of COMMAND-SEQUENCE
+displays name of the function
+
+C-h k then press COMMAND keys SEQUENCE : more info, displays documentation of the function
+as well as its name in a separate window
+
+C-h x	Describe a command.  You type in the name of the
+		command.
+
+C-h a	Command Apropos.  Type in a keyword and Emacs will list
+		all the commands whose names contain that keyword.
+		These commands can all be invoked with META-x.
+		For some commands, Command Apropos will also list a
+		sequence of one or more characters which runs the same
+		command.
+
+C-h i	Read included Manuals (a.k.a. Info).  This command puts
+		you into a special buffer called "*info*" where you
+		can read manuals for the packages installed on your system.
+		Type m emacs <Return> to read the Emacs manual.
+		If you have never before used Info, type h and Emacs
+		will take you on a guided tour of Info mode facilities.
+		Once you are through with this tutorial, you should
+		consult the Emacs Info manual as your primary documentation.

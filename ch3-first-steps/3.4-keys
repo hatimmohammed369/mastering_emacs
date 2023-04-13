@@ -1,0 +1,30 @@
+The most important subject in Emacs. Emacs is famous for its weird keys commands. A old joke is that Emacs stands for “Escape Meta Alt Control Shift.”
+Key modifiers are:
+C- Control
+M- Meta ("Alt" on today keyboards)
+S- Shift
+Also there's (Super) and (Hyper) but they don't exist in today keyboards.
+
+*KEY NOTE:
+    Because of terminals limitations, some key bindings will not be usable when running Emacs in terminal, so it's best to use GUI Emacs
+    
+Nevertheless, key modifiers are a big part of day-to-day
+Emacs use so being able to “decode” a string of keys is
+important.
+
+In Emacs, we define a (key sequence, or just key) to mean squence of keyboard (or mouse) actions, and a (complete key) to mean one or more keyboard sequences that invoke a (command); if a key sequence is not a (complete key) then we have a (prefix key). If the key sequence was not recognized by Emacs, then it's invalid and an error message is displayed in the echo area
+
+C-d = CTRL-d calls a command called delete-char, which deletes the first character next to the point. To invoke this command press and hold Control and then press d
+
+C-M-d = CTRL ALT d is similar but you press and hold Control then press and hold Alt and then press d
+
+Prefix keys: Sequence of keyboard characters used a groupings to introduce more key sequence, each prefix key is group containing many other keys sequences. One example if C-x (Control x), here are some commands invoked by C-x:
+*C-x C-f runs a command called find-file. Press Control then x and then wait for a small amount of time and then press Control again follow by f
+Or Press and hold Control then press x and then press f
+
+*C-x 8 P : prints symbol ¶
+
+*C-M-% : It's actually Control Alt Shift 5, invokes command (M-x query-replace-regexp)
+
+C-g : all cases exit command
+

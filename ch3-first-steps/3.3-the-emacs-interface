@@ -1,0 +1,3 @@
+When Emacs is launched, you're usually greeted with a (splash screen), also there's a menu bar, a tool bar and a scroll bar.
+When running Emacs in terminal you can still access the menu bar by pressing F10
+If you don't see an interface with the above mentioned features, it's probably because of your init file, which you can make Emacs run ignoring the init file by running : emacs -q

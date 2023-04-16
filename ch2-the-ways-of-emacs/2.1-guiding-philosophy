@@ -1,4 +1,3 @@
-CHAPTER 2 SECTION 1
 #GUIDING PHILOSOPHY
 --------------------
 -Emacs is a tinkere's editor. Plain and simple. People who hack on Emacs do it because almost every facet of it is extensible.
@@ -20,7 +19,7 @@ CHAPTER 2 SECTION 1
 #LISP?
 ------
 -Emacs is customized through this (scripting) language knows as Emacs Lisp (informally known as elisp) because Lisp is a perfect abstraction suitable for Emacs.
-TCL have been considered to replace lisp but this attempt was failed
+TCL, during the 90s, have been considered to replace lisp but this attempt was failed
 
 -You will have to learn living with Emacs configuration and elisp, but if you hate the idea of tweaking everything, you have 2 options left:
      #Use a starter kit: pre-built emacs configurations with additional packages, like:

@@ -1,0 +1,38 @@
+The Customize interface is divided into groups and subgroups, each group represents one package, mode, or a functionality. The top-level group is called (Emacs) and contains all other groups. To access the Customize interface run (M-x customize)
+
+the Customize interface is made up of two things: faces and options. Options are a catch-all term for things you can Customize that aren't faces. Faces are small panels where you customize a particular property
+
+press buttons (apply) and (apply and save) to make your settings persist, (revert) undo settings. also there's (revert this session's customizations) if you're uphappy with the changes you applied, but keep in mind it only revert the options you in the current buffer - not all the customizations made globally
+
+you can always revert your changes until you save, after that you have to manually undo or use revert button's erase customizations
+
+all customizations are stored in your init file by default (or possibly some other file) and like the rest of emacs the changes are stored as elisp code, making it possibly to manually modify again
+
+you can use several shortcuts to navigate through the customize interface:
+#M-x customize:
+    displays the Customize interface and all the groups
+
+#M-x customize-browse:
+     opens a tree group browser
+
+#M-x customize-customized:
+     customizes options and faces that ypu have change but not saved
+
+#M-x customize-changed:
+     displays all options changed since a particular Emacs version. Good way to discover new features and options
+
+#M-x customize-face:
+     prompts for the name of a face to Customize
+
+#M-x customize-group:
+     prompts for a group name (e.g., python) to Customize
+
+#M-x customize-mode:
+     customizes the major mode of your current buffer. A quick way to change things and have a general overview of the current major mode
+
+#M-x customize-saved:
+     Displays all your saved options and faces. Handy if you want to track some errors
+
+#M-x customize-themes:
+     Shows a list of all installed themes
+

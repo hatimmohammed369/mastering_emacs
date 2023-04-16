@@ -1,0 +1,4 @@
+Every aspect of Emacs is indeed customizable. If you want to change Emacs you have two choices:
+#Use the Customize interface:
+     A built-in interface designed to be user-friendly, but not everything is supported by Customize because it can write elisp code for very specific purposes and thus it's almost impossible to generalize an interface across all of Emacs's many, many settings. Nevertheless most of Emacs's built-in packages support the Customize interface and so do a lot of third-party packages
+ #Write elisp to alter what you want to customize

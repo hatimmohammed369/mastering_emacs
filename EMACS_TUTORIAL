@@ -74,6 +74,16 @@ CTRL-x 3 : split current window vertically (split-window-right)
 
 CTRL-ALT-_ (CTRL ALT SHIFT -) : Redo
 
+M-l : lower case next word
+M-u : upper case next word
+
+C-x C-l : lower case region
+C-x C-u : upper case region
+
+C-u 0 C-k : kill from current position backwards to line head
+
+M-m : jump to first non-whitespace in line
+
 On most terminals, the "<" is above the comma, so you must use the
 shift key to type it.  On these terminals you must use the shift key
 to type M-< also; without the shift key, you would be typing M-comma.

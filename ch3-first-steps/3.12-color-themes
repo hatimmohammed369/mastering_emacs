@@ -1,0 +1,1 @@
+You can change the color scheme of Emacs. To view your local themes run (M-x customize-themes). To view themes available online in MELPA and ELPA run (M-x package-list) and look for packages with names that end with -theme, they're like all other packages. Also you can customize each theme on its own. You can several themes running at the same time

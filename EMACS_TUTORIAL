@@ -92,6 +92,8 @@ M-^ = Alt + Shift + 6 : Join current line with the one before it
 
 M-g g : prompts for a number N then moves the Point to the head of line N
 
+C-x z : Repeats the last command whatever it's, you can keep pressing (z) and the last command will be repeat for each (z) you press
+
 On most terminals, the "<" is above the comma, so you must use the
 shift key to type it.  On these terminals you must use the shift key
 to type M-< also; without the shift key, you would be typing M-comma.

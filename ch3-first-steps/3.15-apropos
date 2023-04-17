@@ -11,3 +11,6 @@ Special Apropos Commands:
 #M-x apropos-library : match in a library (name is prompted)
 #M-x apropos-user-option : match in user options available through the Customize interface
 #M-x apropos-value : Match all symbols with a particular value
+
+The apropos system is great for searching all commands whose name match a given pattern
+The Apropos sytem is great way to discover new commands

@@ -1,0 +1,26 @@
+what captures the beauty of Emacs's self-documenting nature is the (Describe System). IF you know what you're looking for then the describe system will explain it to you. Every facet of Emacs is indexed in the describe system even the C core. From keys to commands to functions to variables to fonts ......
+Everything is there, neatly categorized
+
+The describe system is not static. Every time you query a particular part of Emacs, it will fetch the required details through an internal introspection layer which itself queries Emacs's own internal data structures. Both the introspection layer and internal data structures are queryable by you through elisp
+
+Most important desctibe key bindings are bound to the C-h prefix key
+
+If you ever find yourself wondering what a symbol in Emacs does (be it a function, a command, a variable or a mode) then describe will tell you.
+
+Most important key bindings:
+#M-x describe-mode C-h m : Displays the documentation for the major mode (and all enable minor modes) for the current buffer. This command should be your first port of call when you’re using a new major mode. You will discover a lot of Emacs’s functionality this way and it is absolutely imperative that you use this command.
+
+What it doesn’t do is list mode-specific commands that are not bound to any key: they are simply not shown.
+
+#M-x describe-command C-h x : Introduced in Emacs 28, this command describes only commands. Useful for interactive commands
+
+#M-x describe-function C-h f : Describes a function
+Describing a function will give you the elisp function signature, the keys (if any) bound to it, a hyperlink to where it’s declared, and a doc string.
+
+#M-x describe-variable C-h v : Describes a variable
+
+#M-x describe-key C-h k : Describes what a key binding does. Type C-h k and re-type the key binding you want and Emacs will tell you what it does
+In Emacs 28, when in *Help* buffer you can use these keys:
+   i : Open the info manual
+   s : Jump to the source definition
+   c : Open the Customize inTerface

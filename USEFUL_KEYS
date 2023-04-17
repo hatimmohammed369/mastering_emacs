@@ -74,3 +74,5 @@ C-x z : Repeats the last command whatever it's, you can keep pressing (z) and th
 M-@ = Meta + Shift + 2 : Mark (highlight) word after the Point
 
 C-h R : open a manual
+
+M-c : Capitalize letter under Point and move to the end of the word 

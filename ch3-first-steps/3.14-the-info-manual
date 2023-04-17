@@ -20,3 +20,6 @@ Another advantage is having the info reader split in another window so you can r
 You can look up the documentation for a command by typing C-h F and at the prompt enter the name of a command. Emacs will jump to the correct place in the info where the comamnd is described
 
 If you want help on a specific Emacs functionality you have to open Emacs manual first, type C-h i followed by m. When prompted for a menu item, type (Emacs) for the Emacs manual or (Emacs List Intro) for the introduction to elisp. As always there's TAB completion
+
+Emacs 28 :
+      You can open a manual with the key binding (C-h R)

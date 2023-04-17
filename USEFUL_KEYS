@@ -72,3 +72,5 @@ M-g g : prompts for a number N then moves the Point to the head of line N
 C-x z : Repeats the last command whatever it's, you can keep pressing (z) and the last command will be repeat for each (z) you press
 
 M-@ = Meta + Shift + 2 : Mark (highlight) word after the Point
+
+C-h R : open a manual

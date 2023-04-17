@@ -1,0 +1,15 @@
+Movement in Emacs is local, regional, or global.
+Local movement is what you do when you edit and move around text near to the Point
+Regional movement involves whole functions or classes if you're writing code, paragraphs if you're writing chapters, ...
+Global movement is anything that takes you from a buffer to another or from a window to another
+
+A (syntactic unit) - a semi-formal term used by commands which operate on group of characters - are words, line, setences, paragraphs, balanced expressions, ...
+
+Emacs uses windows (what we nowadays call frames or panes) penchantly
+
+In Emacs windows are transient; they come and go as you wish. They're many variables you can use to fine-tune Emacs's windowing behavior, but you can't really tweak your way out of Emacs's windows
+
+Buffers are rarely killed, you can leave them and return back whenever you want. Buffers don't use a lot of memory at all, in fact a buffer is just slightly larger than its contents, this sligh increase is buffer-related information like meta data and its particular coding system, ...
+
+A typical Emacs session lasts weeks and most Emacs hackers have hundreds of buffers running without issues
+

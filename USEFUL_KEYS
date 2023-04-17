@@ -1,0 +1,74 @@
+CTRL-v
+Move one screenful forward
+
+ALT-v
+Move one screenful backwards
+
+CTRL-p
+Previous line
+
+CTRL-n
+next line
+
+CTRL-f
+Forward one character
+
+ALT-f
+Forward one word
+
+CTRL-b
+Backward one character
+
+ALT-b
+Backward one word
+
+CTRL-a
+Line head
+
+CTRL-e
+Line tail
+
+ALT-a
+Paragraph head
+
+ALT-e
+Paragraph tail
+
+ALT-<
+Move to head of text
+
+ALT->
+Move to end of text
+
+CTRL-x h : select all
+
+ALT-CTRL-SHIFT-[
+ALT-CTRL-SHIFT-]
+Move by blocks of (code, paragraphs, ...)
+
+CTRL-x 2 : split current window horizontally (split-window-below)
+CTRL-x 3 : split current window vertically (split-window-right)
+
+CTRL-ALT-_ (CTRL ALT SHIFT -) : Redo
+
+M-l : lower case next word
+M-u : upper case next word
+
+C-x C-l : lower case region
+C-x C-u : upper case region
+
+C-u 0 C-k : kill from current position backwards to line head
+
+M-m : jump to first non-whitespace in line
+
+C-t : swap character under the Point with the one before the Point
+
+M-t : swap word after(or under) the Point with the one before the Point
+
+M-^ = Alt + Shift + 6 : Join current line with the one before it
+
+M-g g : prompts for a number N then moves the Point to the head of line N
+
+C-x z : Repeats the last command whatever it's, you can keep pressing (z) and the last command will be repeat for each (z) you press
+
+M-@ = Meta + Shift + 2 : Mark (highlight) word after the Point

@@ -1,0 +1,2 @@
+(menu-bar-mode -1) ;; Disable menu bar
+

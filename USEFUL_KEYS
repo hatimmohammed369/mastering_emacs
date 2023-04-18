@@ -1,3 +1,9 @@
+M-w : Copy
+
+C-w : Cut
+
+C-y : Past
+
 CTRL-v
 Move one screenful forward
 

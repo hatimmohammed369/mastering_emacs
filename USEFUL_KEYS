@@ -84,3 +84,7 @@ C-h R : open a manual
 M-c : Capitalize letter under Point and move to the end of the word
 
 M-! = Meta + Shift + 1 : Emacs prompts you for a shell command to execute and then displays the output a window (if any)
+
+ESC ESC ESC : Exit out of prompts, regions, prefix arguments and return to just one window
+
+F10 : Activates (Put focus on, not toggle it on/off) the menu bar

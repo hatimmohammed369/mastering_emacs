@@ -1,0 +1,18 @@
+The menu bar is not clickable in terminal, rather you have to press F10 and then navigate using your keyboard
+
+Most major modes have their own menu bar entry as welll improving the discoverability of the major modex
+
+Basic tasks and their key bindings:
+# C-x C-f : Find (open) a file
+# C-x C-s : Save the buffer (if the buffer points to no file Emacs prompts you for file name)
+# C-x b   : Switch buffer (Emacs prompts you for your destination buffer)
+# C-x k   : Kill (close) a buffer
+# C-x C-b : Displays all open buffers
+# C-x C-c : Exits Emacs
+# ESC ESC ESC : Exits out of prompts, regions, prefix arguments, and returns to just one window
+# C-/     : Undo
+# C-M-_   : Redo
+# F10     : Activates(put focus on) menu bar
+
+Emacs will guess the right major mode for your file based on its extension and if that fails, by the content of the file, and usually Emacs guesses right
+

@@ -88,3 +88,7 @@ M-! = Meta + Shift + 1 : Emacs prompts you for a shell command to execute and th
 ESC ESC ESC : Exit out of prompts, regions, prefix arguments and return to just one window
 
 F10 : Activates (Put focus on, not toggle it on/off) the menu bar
+
+C-x C-x : Put the mark where point is now, and point where the mark is now.
+This command works even when the mark is not active,
+and it reactivates the mark.

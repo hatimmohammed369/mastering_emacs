@@ -100,3 +100,5 @@ C-x C-w : Save as
 C-x s : Save all unsaved files
 
 M-x (ib)uffer : Analgous to C-x C-b, it lists all buffers, but in a pretty-printed style
+
+M-x ido-mode / M-x fido-mode : Auto-Completion frameworks

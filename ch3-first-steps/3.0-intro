@@ -1,5 +1,6 @@
 CONTENTS:
 # STARTINGS EMACS
+# EMACS CLIENT SERVER
 # THE EMACS INTERFACE
 
 
@@ -14,6 +15,24 @@ CONTENTS:
 -q   : do not load an init file (like init.el)
 -Q   : Do not load site-wide startup file(a global setting file like init file), your init file, nor X resource
 Emacs will usually start slower than other editors (as it has more packages and features) as it's designed for long session and not quick edits.
+
+
+
+
+
+======================
+# EMACS CLEINT SERVER
+======================
+	What if you using the command line but want to edit some file?
+Instead of calling emacs, which spawns an entirely new instance, you can use (emacsclient) which initiates a server(you can start several servers) and corresponding to a single instance of Emacs such that all files will edited using the single instance. So several severs, each with its own instance of Emacs, and all files will be edited in that single instance
+- Add (server-start) to init.el, or run command: emacs --daemon
+- DO NOT use (emacs) binary, use (emacsclient)
+Options:
+	-c  : creates a graphical frame(if X is available) or a terminal frame
+	if X is unavailable
+	-nw : creates a terminal frame
+	-n  : The client will return immediately instead of waiting for you to finish, usefull if you want to open a bunch of files
+	When using the client, pressing CTRL-x # will switch to other buffer you're editing, when all buffers are closed Emacs will signal the client to exit and return control to the terminal
 
 
 

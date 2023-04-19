@@ -1,4 +1,113 @@
-Every aspect of Emacs is indeed customizable. If you want to change Emacs you have two choices:
+CONTENTS:
+# CONFIGURING EMACS
+# THE CUSTOMIZE INTERFACE
+# EVALUATING ELISP CODE
+# THE PACKAGE MANAGER
+# COLOR THEMES
+
+
+
+
+
+====================
+# CONFIGURING EMACS
+====================
+	Every aspect of Emacs is indeed customizable. If you want to change Emacs you have two choices:
 #Use the Customize interface:
      A built-in interface designed to be user-friendly, but not everything is supported by Customize because it can write elisp code for very specific purposes and thus it's almost impossible to generalize an interface across all of Emacs's many, many settings. Nevertheless most of Emacs's built-in packages support the Customize interface and so do a lot of third-party packages
  #Write elisp to alter what you want to customize
+
+
+
+
+
+==========================
+# THE CUSTOMIZE INTERFACE
+==========================
+	The Customize interface is divided into groups and subgroups, each group represents one package, mode, or a functionality. The top-level group is called (Emacs) and contains all other groups. To access the Customize interface run (M-x customize)
+
+the Customize interface is made up of two things: faces and options. Options are a catch-all term for things you can Customize that aren't faces. Faces are small panels where you customize a particular property
+
+press buttons (apply) and (apply and save) to make your settings persist, (revert) undo settings. also there's (revert this session's customizations) if you're uphappy with the changes you applied, but keep in mind it only revert the options you in the current buffer - not all the customizations made globally
+
+you can always revert your changes until you save, after that you have to manually undo or use revert button's erase customizations
+
+all customizations are stored in your init file by default (or possibly some other file) and like the rest of emacs the changes are stored as elisp code, making it possibly to manually modify again
+
+you can use several shortcuts to navigate through the customize interface:
+#M-x customize:
+    displays the Customize interface and all the groups
+
+#M-x customize-browse:
+     opens a tree group browser
+
+#M-x customize-customized:
+     customizes options and faces that ypu have change but not saved
+
+#M-x customize-changed:
+     displays all options changed since a particular Emacs version. Good way to discover new features and options
+
+#M-x customize-face:
+     prompts for the name of a face to Customize
+
+#M-x customize-group:
+     prompts for a group name (e.g., python) to Customize
+
+#M-x customize-mode:
+     customizes the major mode of your current buffer. A quick way to change things and have a general overview of the current major mode
+
+#M-x customize-saved:
+     Displays all your saved options and faces. Handy if you want to track some errors
+
+#M-x customize-themes:
+     Shows a list of all installed themes
+
+
+
+
+
+=========================
+# EVALUTATING ELISP CODE
+=========================
+	Frequently you will find yourself want to evaluate elisp code, there're several ways to do this:
+# Restarting Emacs
+# M-x eval-buffer : evaluate current buffer
+# M-x eval-region : evaluate current region
+* Some things are not re-evaluated even if you tell Emacs to, thus you must restart Emacs
+
+
+
+
+
+======================
+# THE PACKAGE MANAGER
+======================
+	Since version 24, Emacs comes shipped witha package manager that seamlessly displays and install packages from centralized repositories.
+
+There's no one repository you can use for all your needs, there's the official GNU Emacs package repository, ELPA, but its content is rather sparse since you have to physically sign over your rights to the FSF(Free Software Foundation) which most people do not do. But there's also MELPA, a volunteer-run package repository which contains almost all packages in ELPA, the package manager has no problem dealing wih this situation.
+
+Repositories are owned by volunteers and hence they may go down - temporarily or permanently - but you can check them in the Emacs Wiki
+
+The code snippet:
+(setq package-archives
+'(("gnu" . "http://elpa.gnu.org/packages/")
+("melpa" . "http://melpa.org/packages/")))
+
+add both MELPA and ELPA
+you can execute (M-x eval-buffer) to update package manager
+
+Next type (M-x package-list-packages) and Emacs should retrieve the packages from both repos above, MELPA and ELPA
+
+#HINT:
+-----
+	If you know the name of a package you can call (M-x package-install) and enter the name in the minibuffer, also there's TAB auto-completion
+	The package archive(s) change constantly and especially if you leave Emacs running for long periods of time - your local copy becomes stale, but you can call (M-x package-refresh-contents) to refresh the list
+
+
+
+
+
+===============
+# COLOR THEMES
+===============
+	You can change the color scheme of Emacs. To view your local themes run (M-x customize-themes). To view themes available online in MELPA and ELPA run (M-x package-list) and look for packages with names that end with -theme, they're like all other packages. Also you can customize each theme on its own. You can several themes running at the same time

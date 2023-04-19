@@ -1,5 +1,0 @@
-Frequently you will find yourself want to evaluate elisp code, there're several ways to do this:
-# Restarting Emacs
-# M-x eval-buffer : evaluate current buffer
-# M-x eval-region : evaluate current region
-* Some things are not re-evaluated even if you tell Emacs to, thus you must restart Emacs

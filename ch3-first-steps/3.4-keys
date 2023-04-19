@@ -1,4 +1,7 @@
-The most important subject in Emacs. Emacs is famous for its weird keys commands. A old joke is that Emacs stands for “Escape Meta Alt Control Shift.”
+=======
+# KEYS
+=======
+	The most important subject in Emacs. Emacs is famous for its weird keys commands. A old joke is that Emacs stands for “Escape Meta Alt Control Shift.”
 Key modifiers are:
 C- Control
 M- Meta ("Alt" on today keyboards)
@@ -27,4 +30,84 @@ Or Press and hold Control then press x and then press f
 *C-M-% : It's actually Control Alt Shift 5, invokes command (M-x query-replace-regexp)
 
 C-g : all cases exit command
+
+
+
+
+
+================================
+# M-x: Execute Extended Command
+================================
+	Only a small portion of Emacs commands are bound to key sequences, most are rarely used and hence not worth a separate key binding; or maybe you overriden the default key binding or there was no key binding in the first place or perhaps you forgot the key binding.
+When any of the above mentioned senarios happen, you will need to use M-x (mex, M x or meta x). When typing M-x (hold alt then press x) a prompt will appear in the minibuffer asking for the command name to be executed and hit RET (Enter). If you called M-x by mistake you can bail out by C-g
+Emacs has a built-in auto-completion support , pressing TAB will open a window containing all possible completions depending on you wrote; if there's only one possible completion it will be completed right away. M-x is not a special command , it's just all other Emacs command , written in elisp and has a key binding which you can change
+------------------------
+#Commands and functions#
+------------------------
+	When we say (command) it's actually a type of function accessible to the user. For a function to be accessible to a user, it must be (interactive), which is the Emacs term for functions with additional properties and callable from M-x and can be have a key binding. If you're a package author and you want a function accessible to end-users you must mark the function (interactive). Non-interactive function can be called from M-x and can't have key bindings
+
+
+
+
+
+======================
+# UNIVERSAL AGRUMENTS
+======================
+	Some commands have alternate states which you can reach using a (universal argument) also called a (prefix argument). The universal argument to bound to C-u (hold Control then press u). When prefix a command with C-u you're telling Emacs to modify the behavior that command. Some commands have zero or several universal argument states. If a command has N states, you simply type C-u up to N times
+
+The universal argument C-u is a short hand for the number 4, so the key sequence C-u a will print 4 a's, C-u C-u will print 16 (4 * 4) a's.
+
+Universal arguments are inactive on their own, when typed Emacs waits for more keys, so universal argument is much like a prefix key
+
+BY THE WAY:
+----------
+	When Emacs is writing characters on the screen it calls the special command (self-insert-command) which when invoked inserts the last typed key, this way keyboard characters and (self-insert-command) are subject to the exact rules of all other commands, they can be unbound, rebound and modified.
+
+DIGIT ARGUMENTS:
+---------------
+*M-0 to M-9 : Digit argument for commands that start with Meta
+M-5-d : delete 5 words forward
+
+*C-0 to C-9 : Digit argument for commands that start with Control
+C-5-d : delete 5 characters forward
+
+C-M-0 to C-M-9 : Digit argument for commands that start with Control-Meta
+C-M-4-_ : Redo 4 times
+
+C-- : Control followed by -, reverse the direction of the following command
+C--9d : delete 9 characters before the point
+
+M-- : Meta followed by -, reverse the direction of the following command
+M--5d : delete 5 words backwards
+
+C-M-- : Control followed by Meta followed by -, reverse the direction of the following command
+
+Keys sequences (C--, M--, C-M--) are called (Negative Arguments)
+
+A lot of people never bother working the digit and negative
+arguments into their workflow, but I find them immensely
+useful. Things like changing the casing on a word I
+just typed are easily done by reversing the direction of a
+command by giving it a negative argument.
+
+Maintain your tempo and avoid moving your fingers
+away from the home row. Negative arguments add
+directionality to commands; digits add repetition or
+change how a command works.
+
+
+
+
+
+===================================
+# DISCOVERING AND REMEMBERING KEYS
+===================================
+	If you can't remember the exact command for something then Emacs can help.
+You can append C-h to any prefix key to get all bindings that belong to that key map. For instance C-x 8 C-h will display a computer-generated list of of keys and their commands. This interface is hyperlinked and part of Emacs self-documenting help system.
+Use Emacs's help system if you forget a particular key combination. You can always append C-h to a prefix key
+
+
+
+
+
 

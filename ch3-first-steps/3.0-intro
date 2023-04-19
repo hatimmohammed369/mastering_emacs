@@ -1,3 +1,11 @@
+CONTENTS:
+# STARTINGS EMACS
+# THE EMACS INTERFACE
+
+
+
+
+
 =================
 # STARTING EMACS
 =================
@@ -8,10 +16,12 @@
 Emacs will usually start slower than other editors (as it has more packages and features) as it's designed for long session and not quick edits.
 
 
+
+
+
 ======================
 # THE EMACS INTERFACE
 ======================
 	When Emacs is launched, you're usually greeted with a (splash screen), also there's a menu bar, a tool bar and a scroll bar.
 When running Emacs in terminal you can still access the menu bar by pressing F10
 If you don't see an interface with the above mentioned features, it's probably because of your init file, which you can make Emacs run ignoring the init file by running : emacs -q
-

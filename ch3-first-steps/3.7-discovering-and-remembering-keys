@@ -1,3 +1,0 @@
-If you can't remember the exact command for something then Emacs can help.
-You can append C-h to any prefix key to get all bindings that belong to that key map. For instance C-x 8 C-h will display a computer-generated list of of keys and their commands. This interface is hyperlinked and part of Emacs self-documenting help system.
-Use Emacs's help system if you forget a particular key combination. You can always append C-h to a prefix key

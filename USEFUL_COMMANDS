@@ -102,3 +102,7 @@ C-x s : Save all unsaved files
 M-x (ib)uffer : Analgous to C-x C-b, it lists all buffers, but in a pretty-printed style
 
 M-x ido-mode / M-x fido-mode : Auto-Completion frameworks
+
+C-/ | C-_ | C-x u : Undo
+Emacs 28 adds the concept of (repeat keys), first enable (repeat-mode) by (M-x repeat-mode). Then some commands can be repeat by pressing the same keys multiple times, like the undo command, C-x u u u u makes 4 undos
+You can customize (repeat-mode) with (M-x customize-option RET repeat-mode RET), (M-x describe-repeat-maps) lists all keys supporting this mode

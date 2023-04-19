@@ -1,4 +1,16 @@
-Emacs is a sophisticated self-documenting editor. Every facet of Emacs is searchable or describable. Learning how to do this is (absolutely essential to mastering Emacs)
+CONTENTS:
+# GETTING HELP
+# THE INFO MANUAL
+# APROPOS
+# THE DESCRIBE SYSTEM
+
+
+
+
+===============
+# GETTING HELP
+===============
+	Emacs is a sophisticated self-documenting editor. Every facet of Emacs is searchable or describable. Learning how to do this is (absolutely essential to mastering Emacs)
 Knowing how to get help is critical because:
 #EMACS KNOWS BEST
 #YOU WILL DISCOVER MORE OF EMACS
@@ -9,3 +21,93 @@ Emacs help system is roughly divided into three parts, knowing which part to use
 #The Info Manual
 #Apropos
 #The Describe System
+
+
+
+
+
+==================
+# THE INFO MANUAL
+==================
+	Emacs's own manual (also all manual's in the GNU ecosystem) are written in TeXinfo which you can view using command line tool (info), but Emacs has its own info viewer also which you can use read Emacs's documentation and also read any TeXinfo documents available in your system. The (info) utility works much like a web browser thought the key bindings are different.
+
+To access Emacs's info reader run (M-x info) or type C-h i
+Info key bindings:
+-[ and ] : Previous / next node
+-l and r : Go back / forward in history
+-n and p : Previous / next sibling node
+-u       : Goes up one level to a parent node
+-SPACE   : Scroll one screen at a time
+-TAB     : Cycles through cross-reference and links
+-RETURN  : Opens the active link
+-m       : Prompts for a menu item name and opens it
+-q       : Closes the info browser
+
+You can use [ and ] to read Emacs's info manual much like a book going through each chapter and sub-chapter and sub-sub-chapter and so forth...
+
+One advantage of using Emacs's info reader is Emacs's universal bookmark system, you can bookmark almost everything in Emacs, info pages, files, directories and much more ...
+Another advantage is having the info reader split in another window so you can read while doing something else, really useful if you want to take an introduction to elisp so you can read and execute code along
+
+You can look up the documentation for a command by typing C-h F and at the prompt enter the name of a command. Emacs will jump to the correct place in the info where the comamnd is described
+
+If you want help on a specific Emacs functionality you have to open Emacs manual first, type C-h i followed by m. When prompted for a menu item, type (Emacs) for the Emacs manual or (Emacs List Intro) for the introduction to elisp. As always there's TAB completion
+
+Emacs 28 : You can open a manual with the key binding (C-h R)
+
+
+
+
+
+==========
+# APROPOS
+==========
+	The apropos system is especially applicable if you're not entirely sure what you're looking for. Apropos shines because you can narrow what you're looking for to a particular area. if you're looking for a variable you can use the apropos system that searches for variables. All of apropos supports regular expressions.
+
+The most common command, C-h a, is (M-x apropos-command) shows all commands (not just commands, not functions) matching a given pattern. If you're looking for a command that works with words, type (C-h a) followed by -word$, which lists all commands whose names ends with -word
+
+Giving apropos-command the .+ pattern (to match everything) yields thousands of commands that Emacs knows about.
+
+Special Apropos Commands:
+#M-x apropos : match everything, commands, functions, variables, ...
+#M-x apropos-command C-h a : match commands only
+#M-x apropos-documentation C-h d: match in documentation
+#M-x apropos-library : match in a library (name is prompted)
+#M-x apropos-user-option : match in user options available through the Customize interface
+#M-x apropos-value : Match all symbols with a particular value
+
+The apropos system is great for searching all commands whose name match a given pattern
+The Apropos sytem is great way to discover new commands
+
+
+
+
+
+======================
+# THE DESCRIBE SYSTEM
+======================
+	what captures the beauty of Emacs's self-documenting nature is the (Describe System). IF you know what you're looking for then the describe system will explain it to you. Every facet of Emacs is indexed in the describe system even the C core. From keys to commands to functions to variables to fonts ......
+Everything is there, neatly categorized
+
+The describe system is not static. Every time you query a particular part of Emacs, it will fetch the required details through an internal introspection layer which itself queries Emacs's own internal data structures. Both the introspection layer and internal data structures are queryable by you through elisp
+
+Most important desctibe key bindings are bound to the C-h prefix key
+
+If you ever find yourself wondering what a symbol in Emacs does (be it a function, a command, a variable or a mode) then describe will tell you.
+
+Most important key bindings:
+#M-x describe-mode C-h m : Displays the documentation for the major mode (and all enable minor modes) for the current buffer. This command should be your first port of call when you’re using a new major mode. You will discover a lot of Emacs’s functionality this way and it is absolutely imperative that you use this command.
+
+What it doesn’t do is list mode-specific commands that are not bound to any key: they are simply not shown.
+
+#M-x describe-command C-h x : Introduced in Emacs 28, this command describes only commands. Useful for interactive commands
+
+#M-x describe-function C-h f : Describes a function
+Describing a function will give you the elisp function signature, the keys (if any) bound to it, a hyperlink to where it’s declared, and a doc string.
+
+#M-x describe-variable C-h v : Describes a variable
+
+#M-x describe-key C-h k : Describes what a key binding does. Type C-h k and re-type the key binding you want and Emacs will tell you what it does
+In Emacs 28, when in *Help* buffer you can use these keys:
+   i : Open the info manual
+   s : Jump to the source definition
+   c : Open the Customize inTerface

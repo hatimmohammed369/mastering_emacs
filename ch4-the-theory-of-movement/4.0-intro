@@ -13,3 +13,4 @@ Buffers are rarely killed, you can leave them and return back whenever you want.
 
 A typical Emacs session lasts weeks and most Emacs hackers have hundreds of buffers running without issues
 
+You can save your window configuration (and there are several ways of doing this) but they were never meant to be immutable, like so many editors — set once and then never changed again.

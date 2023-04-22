@@ -1,4 +1,21 @@
-The menu bar is not clickable in terminal, rather you have to press F10 and then navigate using your keyboard
+CONTENTS:
+# THE BASICS
+# C-x C-f : FIND FILE
+# C-x C-s : SAVE BUFFER
+# C-x C-c : EXIT EMACS
+# C-x b   : SWITCH BUFFER
+# C-x k   : KILL BUFFER
+# ESC ESC ESC : KEYBOARD ESCAPE
+# C-/     : Undo
+
+
+
+
+
+=============
+# THE BASICS 
+=============
+	The menu bar is not clickable in terminal, rather you have to press F10 and then navigate using your keyboard. The menu bar is controlled by the (menu-bar-mode) variable
 
 Most major modes have their own menu bar entry as welll improving the discoverability of the major modex
 
@@ -16,3 +33,158 @@ Basic tasks and their key bindings:
 
 Emacs will guess the right major mode for your file based on its extension and if that fails, by the content of the file, and usually Emacs guesses right
 
+
+
+
+
+======================
+# C-x C-f : FIND FILE
+======================
+	Opening a file in Emacs is called (finding a file) or even (visiting a file), but it's perfectly fine to say (opening a file). The reason is that Emacs does not really distinguish between (opening an existing file) and (creating a new file)
+So if you type C-x C-f /temp/main.c Emacs will visit it, where it's there or not; if not then Emacs will display an empty buffer
+
+*MAJOR MODE LOAD ORDER
+----------------------
+When you visit a file, Emacs will pick a major mode. Emacs supports an array of detection mechanisms that can all be changed to suit your needs.
+They are listed here in the order they are applied:
+
+1 - FILE-LOCAL VARIABLES are variables that Emacs can enable per-file if they present in te file. They appear as headers or footers in the file, you manually add them to your file contents
+  header form:
+  -*- mode: mode-name-here; my-variable: value -*-
+
+  footer form:
+  Local Variables:
+  mode: mode-name-here
+  my-variable: value
+  End:
+
+Emacs will also look at commented lines using that major mode's comment syntax
+
+It is worth knowing that file variables read into Emacs
+are local to that file’s buffer (meaning other buffers are
+unaffected by it.) That means if you have particular
+settings that apply only to that file, you can add them
+to the header or footer and Emacs will load them au-
+tomatically. In practical terms, that means everything
+from indentation settings to more complex variables
+are controllable from file variables.
+
+Because Emacs is in effect running code straight from a
+file, all Emacs variables are divided into safe and unsafe
+file variables: variables that are declared as safe – typ-
+ically by Emacs maintainers – are evaluated automat-
+ically. For unsafe variables, you must first tell Emacs
+what to do: you can ignore the variable; or evaluate
+it once, temporarily, for that file only; or declare it as
+safe.
+
+2 - PROGRAM LOADER DIRECTIVES or (shebangs) are also supported. Emacs will figure out the right (if any installed in Emacs) major mode for the file using the available shebang. The variable (interpreter-mode-alist) lists the program loaders that Emacs can detect
+
+3 - MAGIC MODE DETECTION uses the (magic-mode-alist) variable to see if the file begins with a pattern stored in the magic mode variable. This detection applies if you have no way to annotate the file or predict the filename or the extension ahead of time
+
+4 - AUTOMATIC MODE DETECTION is how most major modes are applied. Emacs has a very large registry of patterns that
+match a file extension, file name or all or parts of a file's path, stored in the variable (auto-mode-alist).
+For instance if you open a zip file, then Emacs enables the major mode archive-mode
+Emacs's major mode detection is rather sophisticated and it will almost always pick the right mode for you
+
+6 - CODING SYSTEMS : Emacs has an excellent unicode support
+To see the coding system in use for the current buffer, type C-h C <RET>
+
+7 - LINE ENDINGS : When you open a file, Emacs will determine the line used endings.
+Line endings and coding systems are displayed in the minibuffer
+
+
+
+
+
+========================
+# C-x C-s : Save Buffer
+========================
+	Not every buffer in Emacs is associated with a file on your disk, some buffers are transient used for things like network I/O or temporary buffers for processing text. So in principle you can save every buffer even those not associated with files
+	If a buffer is associated with a file, saving the buffer will save its contents to that file. If a buffer is not associated with a file, saving a buffer will make Emacs prompt you for a filename
+	If a buffer is linked to a file use C-x C-s to save the buffer to the file. If a buffer is free, use C-x C-w to give a filename to which the buffer will saved to.
+# C-x C-s is akin to (Save)
+# C-x C-w is akin to (Save as)
+
+
+
+
+
+========================
+# C-x C-c : Exits Emacs
+========================
+	You can exit Emacs - or just terminate your connection to it if you're using client-server mode - but Emacs will only exit after asking you which unsaved files you want to save.
+# Y/yes : Saves the files
+# N/DEL : Skips current buffer
+# q/RET : Aborts the save, continues with exit
+# C-g   : Aborts the save and the exit
+# !     : Saves all remaining buffers
+# d     : Diff the file on the system with the one in the buffer
+
+NOTE THAT EMACS WILL TRAVERSE THE LIST OF (UNSAVED FILES) LEAVING (UNSAVED BUFFERS). So you need to manually save buffers not associated to files
+
+And if you try to exit without saving, Emacs will always ask you one last time if you want to proceed.
+
+
+
+
+
+========================
+# C-x b : SWITCH BUFFER
+========================
+	Emacs will remember last buffer you visited, so when typing C-x b the name of last buffer is the (default action), so pressing RET will take you to your last visited buffer immediately
+
+- To distinguish user-created buffers from Emacs's buffers, Emacs's buffers are all named in this style: *buffer_name*
+
+- One key feature of (C-x b) command is that it can be used to create (scratch buffers), empty temporary buffers not linked to any file that can be used to all sorts of things, like doing some extensive editing to some region of text, you copy that region to some scratch buffer and then do all your editing and then take the final text back to its place
+
+*LISTING BUFFERS : You can use (C-x C-b) to list all buffers running now in Emacs, but also you can use (M-x ibuffer)
+
+*BUFFER SWITCHING ALTERNATIVES:
+-------------------------------
+	The built-in interface for buffer switching is rather poor, but Emacs has two alternatives built-in (but disabled by default): IDO and FIDO
+
+
+
+
+
+======================
+# C-x k : KILL BUFFER
+======================
+	Killing a buffer means closing it, but you don't have to kill a buffer at all, leave them in the background until you need them again. Normal Emacs sessions have hundreds of buffers running together with no issues
+
+
+
+
+
+================================
+# ESC ESC ESC : KEYBOARD ESCAPE
+================================
+	If you want to go back to normal, type ESC ESC ESC, all windows (except current) are closed, are prompts are closed, are prefix arguments are cancelled, nd recursive editing levels are unwound?
+
+
+
+
+
+=============
+# C-/ : UNDO
+=============
+	Undo is bound to many key sequences : C-/ , C-_ , C-x u, Edit -> Undo in the menu bar
+Emacs 28 adds the concept of (repeating keys). If you enable (repeat-mode) with (M-x repeat-mode). You can chain repeated undo statements with (C-x u u ... u), Not all keys in Emacs work this way, but you can see a list of the ones that do with (M-x describe-repeat-maps).
+
+In most editors undo and redo are stored in a list, in Emacs they are stored in what's known as the (undo ring)
+
+Most editors feature a linear undo list : you can undo and redo, but if you undo and then change the text, you will lost the undone steps; they will be unrecoverable and lost forever.
+Open any text editor:
+write hello
+press return
+write world
+undo
+press backspace
+if you try to redo nothing happens
+
+In Emacs this is not the case. Every action you take is recorded in the undo ring and this includes the act of undoing something. This means it's next to impossible to lose undo history as the act of undoing is itself (undo-able action)
+Emacs will group certain commands together into one cohesive (undo cell) - like typing characters or repeating the same command many times in a row.
+Some events will always "seal" the undo record and start a new one. Pressing RET, backspace, or moving the Point around are three such examples
+
+Emacs will keep undoing commands from the (undo ring), if you want to redo something you need to break the cycle by some of the above (Pressing RET or backspace or moving the point)

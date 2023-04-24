@@ -100,3 +100,12 @@ S-expressions is a LISP term for (balanced expressions), things like strings and
 - C-M-p : Move backward to previous list
 
 
+==========================
+# OTHER MOVEMENT COMMANDS
+==========================
+* MOVING BY DEFFUN
+-------------------
+A list term that stands for (define function)
+- C-M-a : Move to beginning of defun
+- C-M-e : Move to end of defun
+- A defun does not have to be a function but in programming modes it's usually functions, classes, or boths; for other modes, it might do other things — in reStructured- Text, for instance, it will jump to the beginning and end of a section or chapter

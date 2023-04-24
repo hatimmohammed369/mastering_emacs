@@ -108,3 +108,24 @@ M-x ido-mode / M-x fido-mode : Auto-Completion frameworks
 C-/ | C-_ | C-x u : Undo
 Emacs 28 adds the concept of (repeat keys), first enable (repeat-mode) by (M-x repeat-mode). Then some commands can be repeat by pressing the same keys multiple times, like the undo command, C-x u u u u makes 4 undos
 You can customize (repeat-mode) with (M-x customize-option RET repeat-mode RET), (M-x describe-repeat-maps) lists all keys supporting this mode
+
+C-x i : Insert the contents of a file into the current buffer, Emacs will prompt you for the filename
+
+C-x C-w : Replace file in current buffer with another, Emacs prompts you for the replacement file
+
+M-x recover-session : Recover files lost by a system crash
+
+M-x revert-buffer : Restore a buffer to its orginal contents
+
+C-s : search forward
+C-M-s : regular expression search
+
+C-r : search backward
+C-M-r : reverse regular expression search
+
+M-p : select previous search string 
+M-n : select next search string
+
+Use C-s or C-r to repeat search in other direction. If Emacs is still searching C-g cancels only the part not matched
+
+M-z (char) : kill through next occurrence of (char)

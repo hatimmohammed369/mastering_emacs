@@ -1,0 +1,39 @@
+CONTENTS:
+# BOOKMARK AND REGISTERS
+
+
+==========================
+# BOOKMARKS AND REGISTERS
+==========================
+Bookmarks work indentically to the ones in your web browser but they support a wide variety of sources. You can bookmark files, M-x man pages, M-x dired directories, Org mode, DocView (including pdf files), and info man pages.
+
+* BOOKMARK FILE
+----------------
+Bookmarks are permanent, meaning they are automatically saved to a bookmark file in ~/.emacs.d/ called (bookmarks). The variable (bookmark-default-file) determines where Emacs stores bookmarks. The bookmarks file is plain text and can be edited manually
+
+* KEY BINDINGS
+--------------
+- C-x r m : Set a bookmark
+- C-x r l : List bookmarks
+- C-x r b : Jump to bookmark
+
+* REGISTERS
+------------
+Registers are the flip side of the coin, they are transient. A register is a single-character store-and-recall mechanism for several data types including:  
+- Window configurations and framesets, framesets hold information about Emacs's frames instead
+- Points, the location of point is another thing you can store in a register
+- Numbers and text
+
+* REGISTERS KEY BINDINGS
+-------------------------
+- C-x r n : Store number in register
+- C-x r s : Store region in register
+- C-x r + : Increment number in register
+- C-x r j : Jump to register
+- C-x r i : Insert content of register
+- C-x r w : Store window configuration in register
+- C-x r f : Store frameset in register
+- C-x r SPC : Store point in register
+
+- By default the point is placed after the inserted text when calling (C-x r i) but prefixing it with C-u (C-u C-x r i) the point is placed before the insert text
+

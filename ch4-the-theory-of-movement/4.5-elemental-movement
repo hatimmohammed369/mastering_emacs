@@ -4,6 +4,7 @@ CONTENTS:
 # MOVING BY WORD
 # MOVEMENT ASYMMETRY
 # SUB- AND SUPERWORD MOVEMENT
+# MOVING BY S-EXPRESSIONS
 
 
 ==================
@@ -72,5 +73,30 @@ syntax class.
 - M-x superword-mode : Minor mode that treats snake_case as distint words
 - There's also (global-subword-mode) and (global-superword-mode)
 - The minor mode (superword-mode) rewires symbols (which usually, but now always, include the underscore) so there're considered part of a word. Note that this command is not perfect. Major mode authors decide what syntax class a character like _ or . should fall under, and if they don’t set a character like _ to be a symbol, the command will not work.
+
+
+==========================
+# MOVING BY S-EXPRESSIONS
+===========================
+S-expressions is a LISP term for (balanced expressions), things like strings and brackets. What constitutes a balanced expression is governed by the major mode used which in turn governed by the syntax table used by the major mode. Like the word and character commands, these follow the same mnemonics as before but with a different modifier, C-M-
+
+* MOVING FORWARD AND BACKWARD IN LINE
+--------------------------------------
+- C-M-f : Move forward by s-expression
+- C-M-b : Move backwards by s-expression
+- s-expr movement commands act like the word commands when you invoke them on "unbalanced" expressions such as regular text
+- The commands (C-M-f) and (C-M-b) treat s-expressions like words, thus you can move quickly between s-expressions
+
+* MOVING UP AND DOWN IN S-EXPRESSION HEIRARCHY
+-----------------------------------------------
+- C-M-d : Move down into a list
+- C-M-u : Move down into a list
+- The commands (C-M-d) and (C-M-u) are useful when you have nested s-expressions, they make you go up/down this the heirarchy of your nested s-expression
+- They're very useful when used C-M-k (kill-sexp)
+
+* MOVING FORWARD AND BACKWARD IN THE SAME LEVEL
+------------------------------------------------
+- C-M-n : Move forward to the next list
+- C-M-p : Move backward to previous list
 
 

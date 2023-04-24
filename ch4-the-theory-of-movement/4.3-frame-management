@@ -1,0 +1,30 @@
+CONTENTS:
+# FRAME MANAGEMENT
+
+
+
+
+
+===================
+# FRAME MANAGEMENT
+===================
+You can create frames - what are called (windows) in other programs and window managers - and you may prefer to do this if you use a (tiling window manager) or to take advantage of multi-monitor setups. Note that frames also work in terminal Emacs
+
+The prefix used for frames is (C-x 5). Like the prefix key of windows (C-x 4) the commands are almost the same
+- C-x 5 2 : Create a new frame
+
+- C-x 5 b : Switch buffer in (other) frame
+
+- C-x 5 0 : Delete the active frame
+
+- C-x 5 1 : Delete all other frames
+
+- C-x 5 C-f : Finds a file in the other frame
+
+- C-x 5 p : Run project command in the other frame
+
+- C-x 5 d : Opens M-x dired in the other frame
+
+- C-x 5 C-o : Displays a buffer in the other frame
+
+If you want to switch to a buffer already visible in some other frame using C-x 5 b, Emacs will take you to that frame in which that buffer is already visible

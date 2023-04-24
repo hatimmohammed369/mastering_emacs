@@ -3,6 +3,7 @@ CONTENTS:
 # SCREEN, LOGICAL AND VISUAL LINES
 # MOVING BY WORD
 # MOVEMENT ASYMMETRY
+# SUB- AND SUPERWORD MOVEMENT
 
 
 ==================
@@ -50,10 +51,26 @@ Every editor has an equivalent to Emacs's syntax table, but what sets Emacs apar
 able version of the characters and their assigned
 syntax class.
 
-
+       
 =====================
 # MOVEMENT ASYMMETRY
 =====================
 - Movement is asymmetric, thus for instance M-f followed by M-b may not necessarily take you back to where you started. Emacs will generally ignore (non-word characters) immediately following the point in the direction you are travelling. The reason for this behavior is simple: if Emacs didn’t do this, then every non-word character the word commands would encounter, in both text and code, would count as a word of its own and end the movement command.
+
+
+==============================
+# SUB- AND SUPERWORD MOVEMENT
+==============================
+- M-x subword-mode   : Minor mode that treats CamelCase as distict words
+- M-x superword-mode : Minor mode that treats snake_case as distint words
+- There's also (global-subword-mode) and (global-superword-mode)
+- If you enable (M-x subword-mode), you enable special movement, transpose and kill commands that operate on each individual, capitalized word in CamelCase
+- There's also a whimsical minor mode, M-x glasses-mode, that visually (it does not alter your buffer text) separates CamelCase words in Camel_Case==============================
+# SUB- AND SUPERWORD MOVEMENT
+==============================
+- M-x subword-mode   : Minor mode that treats CamelCase as distict words
+- M-x superword-mode : Minor mode that treats snake_case as distint words
+- There's also (global-subword-mode) and (global-superword-mode)
+- The minor mode (superword-mode) rewires symbols (which usually, but now always, include the underscore) so there're considered part of a word. Note that this command is not perfect. Major mode authors decide what syntax class a character like _ or . should fall under, and if they don’t set a character like _ to be a symbol, the command will not work.
 
 

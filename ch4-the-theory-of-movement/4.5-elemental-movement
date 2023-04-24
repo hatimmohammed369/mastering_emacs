@@ -1,5 +1,6 @@
 CONTENTS:
 # NAVIGATION KEYS
+# SCREEN, LOGICAL AND VISUAL LINES
 
 
 ==================
@@ -13,3 +14,21 @@ The page up/down keys scroll up/down a screenful of text, retaining 2 lines of t
 M-x customize-option RET next-screen-context-lines
 
 - Terminals and shells that use the (GNU readline library) already use Emacs's nagivation keys commands
+
+
+===================================
+# SCREEN, LOGICAL AND VISUAL LINES
+===================================
+Visual/Screen line: A visual/screen line is what you see. If you have a very long line wrapped into three lines then you have three visual/screen lines
+
+Logical line: The opposite of visual/screen lines. Logical lines are governed by the contents of the buffer and nothing else
+
+Historically, the commands C-n and C-p acted on (logical lines) and thus you can't use them to move by visual lines. But today, in the latest versions of Emacs, C-n and C-p move by (visual lines). You can revert back to old behavior with (M-x customize-option RET line-move-visual)
+
+* Mode visual-line-mode
+------------------------
+Enable in current buffer only
+Better line wrapping, C-p and C-n behave as if (line-mode-visual) is enable, and C-a and C-e and C-k all now act on (visual lines) instead of (logical lines). Also there's global-visual-line-mode for all buffers
+
+- You toggle off wrapped by (M-x toggle-truncate-lines)
+

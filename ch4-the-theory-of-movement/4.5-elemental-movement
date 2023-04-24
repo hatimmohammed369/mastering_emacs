@@ -32,3 +32,8 @@ Better line wrapping, C-p and C-n behave as if (line-mode-visual) is enable, and
 
 - You toggle off wrapped by (M-x toggle-truncate-lines)
 
+
+=====================================
+# DISPLAYING LINE AND COLUMN NUMBERS
+=====================================
+You can customize the behavior of line numbers with (M-x customize-option RET global-display-line-numbers-mode). There's absolute and relative numbering, displaying column numbers, ....

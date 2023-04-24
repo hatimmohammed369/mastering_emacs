@@ -1,0 +1,15 @@
+CONTENTS:
+# NAVIGATION KEYS
+
+
+==================
+# NAVIGATION KEYS
+==================
+The usual nagivation keys (up, down, page up, page down, ...) all work normally  Emacs
+
+* NOTICE
+---------
+The page up/down keys scroll up/down a screenful of text, retaining 2 lines of text for context. The remaining lines count can be adjusted by typing:
+M-x customize-option RET next-screen-context-lines
+
+- Terminals and shells that use the (GNU readline library) already use Emacs's nagivation keys commands

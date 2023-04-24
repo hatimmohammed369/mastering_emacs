@@ -1,6 +1,8 @@
 CONTENTS:
 # NAVIGATION KEYS
 # SCREEN, LOGICAL AND VISUAL LINES
+# MOVING BY WORD
+# MOVEMENT ASYMMETRY
 
 
 ==================
@@ -37,3 +39,21 @@ Better line wrapping, C-p and C-n behave as if (line-mode-visual) is enable, and
 # DISPLAYING LINE AND COLUMN NUMBERS
 =====================================
 You can customize the behavior of line numbers with (M-x customize-option RET global-display-line-numbers-mode). There's absolute and relative numbering, displaying column numbers, ....
+
+
+=================
+# MOVING BY WORD
+=================
+You can also use the usual C-<left> (M-f) and C-<right> (M-b) in Emacs.
+What constitute a word in Emacs is dependent on the major mode you are using in your current buffer. Every character - printable and Unicode code points - are given a meaning by the mode author, directly or indirectly, in a register that maps the characters to a particular syntactic meaning. This registery is called a (syntax table). The (syntax table) decides what makes up a word (or symbol, comment, ...).
+Every editor has an equivalent to Emacs's syntax table, but what sets Emacs apart is that you can inspect and change the syntax table. You can view your current buffer syntax table with (C-h s).  In it you will see a human read-
+able version of the characters and their assigned
+syntax class.
+
+
+=====================
+# MOVEMENT ASYMMETRY
+=====================
+- Movement is asymmetric, thus for instance M-f followed by M-b may not necessarily take you back to where you started. Emacs will generally ignore (non-word characters) immediately following the point in the direction you are travelling. The reason for this behavior is simple: if Emacs didn’t do this, then every non-word character the word commands would encounter, in both text and code, would count as a word of its own and end the movement command.
+
+

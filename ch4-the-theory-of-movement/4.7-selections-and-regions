@@ -1,0 +1,36 @@
+CONTENTS:
+# SELECTIONS AND REGIONS
+# SETTING THE MARK
+
+
+=========================
+# SELECTIONS AND REGIONS
+=========================
+Selection in Emacs is called (the region), which is bounded by the point and the mark. The region is always defined as the mark to the point, whether the point comes before or after the mark.
+
+Some commands, like M-> and M-<, whisk you away from your current position in the buffer, but before they move you they leave a mark (a breadcrumb trail, effectively) in the (mark ring) that you can return to later using (C-u C-<SPC>)
+
+* THE MARK RING
+---------------
+Like the undo ring, the mark ring contains all the marks you have placed in a buffer both directly, like using C-<SPC>, or indirectly from commands like M-< and M->. There is also the (global mark ring) for commands that work across buffer boundaries. When the mark ring changes some text, like "Mark set", appears in the echo area
+
+- C-x C-x : Exchanges the point and the mark and reactivates your last region wherever the mark is
+
+- An active region follows the point as you move around, but breaks when you issue a non-movement command
+
+- Some Emacs commands don't care if the region isn't actually active and work anyway (so be careful)
+
+- M-x delete-selection-mode : When the region is active and you type text into the buffer, Emacs will delete the selected text first, use (M-x customize-option RET dele te-selection-mode)
+
+
+===================
+# SETTING THE MARK
+===================
+Emacs has special mark commands that work on syntactic units
+- M-h                 : Marks the next paragraph
+- C-x h               : Marks the whole buffer
+- C-M-h               : Marks the next defun
+- C-x C-p             : Marks the next page
+- M-@                 : Marks the next word
+- C-M-<SPC> and C-M-@ : Marks the next s-expressino
+All these commands append to the existing selection if you already have a region active

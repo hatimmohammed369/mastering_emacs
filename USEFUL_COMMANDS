@@ -95,7 +95,8 @@ C-x C-x : Put the mark where point is now, and point where the mark is now.
 This command works even when the mark is not active,
 and it reactivates the mark.
 
-C-M-v : Scroll the last opened window
+C-M-v   : Scroll down the other window
+C-M-S-v : Scroll up the other window, also C-M-- v
 
 C-x C-w : Save as
 

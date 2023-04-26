@@ -1,0 +1,38 @@
+CONTENTS:
+# KILLING VERSUS YANKING
+# KILLING LINES
+
+
+======================
+# KILLING VERSUS YANKING
+======================
+Deleted text is not retained in your kill ring whereas killed text is
+
+- Consecutive kills append
+---------------------------
+All kill commands append to the kill ring - that is to say they append to the text in the kill ring if and only if the last command was also a kill command. If you break the cycle, by moving or writing or running a command, the next kill command will create a new entry in the kill ring.
+
+For instance, typing M-d M-d M-d and then yanking you will get the last three words you killed together but reversed
+
+- THE KILL RING CAN HOLD MANY ITEMS
+------------------------------------
+You cannot easily lose information in the kill ring, but nonetheless the kill ring has a maximum size controlled by (M-x customize-option RET kill-ring-max RET)
+
+- the kill ring is global shared by all buffers
+
+- Kill is also deleting, because Emacs will rarely put you in situations where accidental data loss is likely, this why all bounded commands kill instead. The kill ring is finite but it is larger than you will ever need
+
+- Marking is unnecessary
+
+- APPENDING TO KILL RING
+-------------------------
+If you move after a kill you can no longer append with normal kill commands, you need to  use (C-M-w)
+
+
+
+================
+# KILLING LINES
+================
+If you want to kill a whole line use C-S-<backspace> but this command will not work in terminals
+There is this package (whole-line-or-region) which modifies C-w such that it kills the whole current line which has the point, (M-x package-instaal)
+Also you can (M-x customize-option RET kill-whole-line) which makes C-k killsthe newline character

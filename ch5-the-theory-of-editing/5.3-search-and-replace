@@ -1,0 +1,16 @@
+CONTENTS:
+# SEARCH AND REPLACE 
+
+
+=====================
+# SEARCH AND REPLACE
+=====================
+Emacs's regular expression implementation is also different from PCRE(Perl-Compatible Regular Expressions), it follows the GNU standard for regular expressions with many additions (and quick a few omissions) to make it suitable for both package developers and Emacs users
+- C-M-% : Query regexp search and replace
+- M-%   : Query search and replace
+- M-x replace-string : Search and replace
+- M-x replace-regexp : Regexp search and replace
+
+- You can use (C-M-% and M-%) from inside Isearch
+- The (query) commands are interactive
+- Emacs replace mechanism also uses (Case Folding)

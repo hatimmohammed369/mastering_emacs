@@ -1,0 +1,20 @@
+CONTENTS:
+# IDO
+
+
+=================================
+# IDO : Interactively DO things
+================================
+A better alternative to default TAB-completion in Emacs with less visual clutter than Helm, but not very useful if you're not entirely sure of what you're looking for
+* FILES AND DIRECTORY SWITHCING
+--------------------------------
+These keys are only available when you run a command that requires you to pick a file or directory like (C-x C-f), C-x d, or C-x C-s
+- C-s, C-r : Move to next and previous match
+- TAB      : Traditional non-IDO TAB-completion
+- RET      : Open selected match
+- C-d      : Open M-x dired buffer in current directory
+- //       : Go to root directory /
+- ~/       : Go to home directory ~
+- Backspace: Delete a character or go up one directory
+
+* BUFFER SWITCHING : C-s, C-r, TAB and RET

@@ -1,0 +1,12 @@
+CONTENTS:
+# HELM
+
+
+=======
+# HELM
+=======
+Helm is an amazing package. It's a generic framework for filter-as-you-type completion; that is, you begin typing and Helm will automatically filter and show you what matches - not unlike Isearch's real-time, incremental search.
+- Helm is a third-party package, not available by default, install with:
+ M-x package-install RET helm RET
+ All Helm commands share the prefix key C-x c
+ - Helm has its own apropos, M-x helm-apropos

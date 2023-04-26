@@ -136,3 +136,5 @@ C-S-<backspace> : Kill current line, akin to C-k C-k
 C-x d : Open dired directory, list directory contents from which you can open files
 
 C-M-w : Append kill
+
+M-x upcase-initials-region : Capitalizes the region, make the first letter of each word capital

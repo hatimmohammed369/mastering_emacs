@@ -1,0 +1,29 @@
+CONTENTS:
+# OCCUR
+# MULTI-OCCUR
+
+
+========
+# OCCUR
+========
+Occur is a grep-like utility in Emacs, it searches for all lines matching a given regular expression and then displays all lines matching given a pattern in a separate window, you can also edit lines. Then you mouse press or press RET on a line and you will be taked directly to its position in your original bufffer
+- M-s o : Occur mode
+- M-s o : Activates occur on current search string inside Isearch
+You can also display additional lines for context controlled by variable (list-matching-lines-default-context-lines)
+When in Occur buffer (named *Occur*) use these keys:
+- M-n, M-p : Go next and previous occurence
+- <, >     : Go to beginning and end of buffer
+- g        : Revert the buffer, refreshing the search results
+- q        : Quits occur mode
+- e        : Switches to occur edit mode
+- C-c C-c  : Exits occur edit mode and applies changes
+These keys are available in the occur bufffer only
+
+When in occur buffer you can jump matching positions in your original buffer quickly with (M-g M-n) for next, (M-g M-p) for previous
+
+
+==============
+# MULTI-OCCUR
+==============
+You can run Occur on all buffers whose name matching a given pattern like \.py$ for all Python files, use M-x multi-occur-matching-buffers
+And you can use Occur on multiple different buffers with (M-x multi-occur)

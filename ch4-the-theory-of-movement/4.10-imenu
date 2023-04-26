@@ -1,0 +1,10 @@
+CONTENTS:
+# IMENU
+
+
+========
+# IMENU
+========
+Imenu is a generic index framework for jumping to points of interest in a buffer. A major mode author will write an elisp snippest that generates those points of interest.
+Most, but not all, major modes support imenu. For programming modes points of interest will be functions, classes, and such things.
+Imenu is not bound to any key, use M-x imenu

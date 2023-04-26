@@ -152,3 +152,15 @@ No universal argument : Deletes the first duplicate line
 C-u : Deletes the last duplicate line
 C-u C-u : Deletes only adjacent duplicates
 C-u C-u C-u : Does not delete adjacent blank lines
+
+M-x flush-lines : Flushes (deletes) all lines in a region that match a
+pattern
+
+M-x keep-lines : Keeps all lines in a region that match a pattern and
+removes all non-matches
+
+M-x copy-matching-lines : Copies all lines in a region that match a
+pattern (Emacs 28+)
+
+M-x kill-matching-lines : Kills all lines in a region that match a
+pattern (Emacs 28+)

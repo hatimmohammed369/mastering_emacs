@@ -146,3 +146,9 @@ M-x count-matches : Counts number of patterns that match in a region
 M-x count-words : Counts words, lines and characters in the buffer
 
 M-x count-words-region, M-= : Counts words, lines and characters in the region
+
+M-x delete-duplicate-lines:
+No universal argument : Deletes the first duplicate line
+C-u : Deletes the last duplicate line
+C-u C-u : Deletes only adjacent duplicates
+C-u C-u C-u : Does not delete adjacent blank lines

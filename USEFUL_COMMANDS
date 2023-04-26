@@ -130,3 +130,9 @@ M-n : select next search string
 Use C-s or C-r to repeat search in other direction. If Emacs is still searching C-g cancels only the part not matched
 
 M-z (char) : kill through next occurrence of (char)
+
+C-S-<backspace> : Kill current line, akin to C-k C-k
+
+C-x d : Open dired directory, list directory contents from which you can open files
+
+C-M-w : Append kill

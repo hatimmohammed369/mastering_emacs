@@ -1,0 +1,25 @@
+CONTENTS:
+# FILLING
+# COMMENTING
+
+
+==========
+# FILLING
+==========
+- M-q : Refiil the paragraph
+- C-x f : Sets the fill column width
+- C-x . : Sets the fill prefix
+- M-x auto-fill-mode : Toggles auto-filling
+
+
+=============
+# COMMENTING
+=============
+- M-; : Comment or uncomment DWIM (Do What I Mean - Emacs will try to guess what to do)
+- C-x C-; : Comment or uncomment line
+- M-x comment-box : Comments the region but as a box
+- M-j, C-M-j      : Inserts new line and continues with commnet on a new line
+
+- M-; toggles commenting on an active region
+- C-x C-; toggles commenting on current line, it also supports negative and digit arguments
+- Emacs understands and respects comments, so you can use M-q with comments 

@@ -138,3 +138,11 @@ C-x d : Open dired directory, list directory contents from which you can open fi
 C-M-w : Append kill
 
 M-x upcase-initials-region : Capitalizes the region, make the first letter of each word capital
+
+M-x count-lines-region : Counts the number of lines in the region
+
+M-x count-matches : Counts number of patterns that match in a region 
+
+M-x count-words : Counts words, lines and characters in the buffer
+
+M-x count-words-region, M-= : Counts words, lines and characters in the region

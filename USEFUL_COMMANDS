@@ -124,7 +124,7 @@ C-M-s : regular expression search
 C-r : search backward
 C-M-r : reverse regular expression search
 
-M-p : select previous search string 
+M-p : select previous search string
 M-n : select next search string
 
 Use C-s or C-r to repeat search in other direction. If Emacs is still searching C-g cancels only the part not matched
@@ -141,7 +141,7 @@ M-x upcase-initials-region : Capitalizes the region, make the first letter of ea
 
 M-x count-lines-region : Counts the number of lines in the region
 
-M-x count-matches : Counts number of patterns that match in a region 
+M-x count-matches : Counts number of patterns that match in a region
 
 M-x count-words : Counts words, lines and characters in the buffer
 
@@ -164,3 +164,15 @@ pattern (Emacs 28+)
 
 M-x kill-matching-lines : Kills all lines in a region that match a
 pattern (Emacs 28+)
+
+C-o : Inserts a blank line after point without moving the point
+
+C-x C-o : Deletes all blank lines after point
+
+C-M-o   : Splits a line after point, keeping the indentation
+
+M-x delete-trailing-whitespace
+
+M-SPC : Deletes all but 1 space or tab to the left and the right of the point
+
+M-\ : deletes whitespaces around point

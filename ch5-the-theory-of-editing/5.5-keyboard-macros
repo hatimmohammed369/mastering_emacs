@@ -1,0 +1,24 @@
+CONTENTS:
+# BASIC COMMANDS
+
+
+=================
+# BASIC COMMANDS
+=================
+- F3 : Starts macro recording or inserts counter value
+- F4 : Stops macro recording or plays last macro
+- C-x ( and C-x ) : Starts and stops macro recording
+- C-x e : Plays last macro
+
+- If you trigger an error in Emacs this will stop recording or playback
+- When recording is in progress you will the word (Def) in the modeline
+- Macros are stored in a ring much like kills, and thus they are never lost util you exit Emacs but nonetheless you can save them to disk
+
+The above commands also accept universal and digit arguments:
+- C-u F3 : Starts recording but appends to the last macro
+- C-u F4 : Plays the second macro in the ring
+- numeric F3 : Starts recording but sets counter to (numeric)
+- numeric F4 : Plays last macro (numeric) times
+numeric = something like C-u 10 or M-10
+
+ALL MACRO RELATED FUNCTIONALITY ARE KEY BINDINGS UNDER THE GROUP (C-x C-k), for info type (C-x C-k) follow C-h
